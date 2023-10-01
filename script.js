@@ -1,4 +1,21 @@
-let 
+// Selects all the buttons in the calculator and stores it in the variable buttons
+const buttons = document.querySelectorAll(".button");
+
+// Creates a function that logs the value of the button that is clicked
+function add(event) {
+   
+    console.log("Value of button:", event.target.innerHTML);
+}
+
+// Adds an event listener to each button that calls the add function when clicked
+buttons.forEach(function(button) {
+    button.addEventListener("click", add);
+})
+
+
+
+
+
 
 
 
