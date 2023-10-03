@@ -1,4 +1,4 @@
-let fieldInput = document.getElementById("fieldInput").innerHTML;
+const fieldInput = document.getElementById("fieldInput");
 
 // Selects all the buttons in the calculator and stores it in the variable buttons
 const buttons = document.querySelectorAll(".button");
@@ -9,8 +9,8 @@ function add(event) {
     let buttonVal = event.target.innerHTML;
     console.log("Value of button:", buttonVal);
 
-    document.getElementById("fieldInput").innerHTML += buttonVal;
-    console.log("New value:", document.getElementById("fieldInput").innerHTML); 
+    fieldInput.innerHTML += buttonVal;
+    console.log("New value:", fieldInput.innerHTML); 
 }
 
 
@@ -21,6 +21,19 @@ function add(event) {
 buttons.forEach(function(button) {
     button.addEventListener("click", add);
 })
+
+const equalButton = document.getElementById("buttonEqual");
+
+
+// This function takes the value of fieldInput and calculates the result. Then displays the reult in fieldInput
+function calculate() {
+    let result = eval(fieldInput.innerHTML);
+    console.log("Result:", result);
+    fieldInput.innerHTML = result;
+}
+
+// Adds an event listener to the equal button that calls the calculate function when clicked
+equalButton.addEventListener("click", calculate);
 
 
 
