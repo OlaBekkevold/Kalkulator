@@ -22,12 +22,14 @@ body {
     position: relative;
     left: 650px;
     top: 50px;
+    height: 50.4px;
+    overflow: hidden;
     
 }
 
 #fieldInput {
-    position: relative;
-    left: 93px;
+    text-align: center;
+    
 }
 
 #grid {
