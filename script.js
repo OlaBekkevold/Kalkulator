@@ -14,7 +14,7 @@ function add(event) {
     console.log("Button class:", buttonClass);
 
     // Checks if the button clicked is an operator and if the previous input also was a operator. If true, the new operator replaces the old one
-    if (buttonClass.includes("operator") && (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/")) {
+    if (buttonClass.includes("operator") && (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/" || lastChar === ".")) {
         fieldInput.innerHTML = fieldInput.innerHTML.slice(0, -1);
     }
 
