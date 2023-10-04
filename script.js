@@ -23,17 +23,12 @@ function add(event) {
 }
 
 
-
-
-
-
 // Adds an event listener to each button that calls the add function when clicked
 buttons.forEach(function(button) {
     button.addEventListener("click", add);
 })
 
 const equalButton = document.getElementById("buttonEqual");
-
 
 // This function takes the value of fieldInput and calculates the result. Then displays the reult in fieldInput
 function calculate() {
@@ -44,6 +39,19 @@ function calculate() {
 
 // Adds an event listener to the equal button that calls the calculate function when clicked
 equalButton.addEventListener("click", calculate);
+
+function clear() {
+    fieldInput.innerHTML = "";
+}
+
+document.getElementById("buttonCE").addEventListener("click", clear);
+
+function remove() {
+    fieldInput.innerHTML = fieldInput.innerHTML.slice(0, -1);
+
+}
+
+document.getElementById("buttonC").addEventListener("click", remove);
 
 
 
