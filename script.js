@@ -7,11 +7,11 @@ const buttons = document.querySelectorAll(".button");
 function add(event) {
 
     let buttonVal = event.target.innerHTML;
-    console.log("Value of button:", buttonVal);
+    
 
     const lastChar = fieldInput.innerHTML.slice(-1);
     const buttonClass = event.target.className;
-    console.log("Button class:", buttonClass);
+   
 
     // Checks if the button clicked is an operator and if the previous input also was a operator. If true, the new operator replaces the old one
     if (buttonClass.includes("operator") && (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/" || lastChar === ".")) {
@@ -19,7 +19,7 @@ function add(event) {
     }
 
     fieldInput.innerHTML += buttonVal;
-    console.log("New value:", fieldInput.innerHTML); 
+    
 }
 
 
@@ -40,17 +40,21 @@ function calculate() {
 // Adds an event listener to the equal button that calls the calculate function when clicked
 equalButton.addEventListener("click", calculate);
 
+// This function clears the fieldInput
 function clear() {
     fieldInput.innerHTML = "";
 }
 
+// Adds an event listener with the clear function
 document.getElementById("buttonCE").addEventListener("click", clear);
 
+// This function removes the last character in fieldInput
 function remove() {
     fieldInput.innerHTML = fieldInput.innerHTML.slice(0, -1);
 
 }
 
+// Adds an event listener with the remove function
 document.getElementById("buttonC").addEventListener("click", remove);
 
 
